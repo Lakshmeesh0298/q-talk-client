@@ -1,0 +1,100 @@
+.ChatBlock {
+  width: 100%;
+  height: 100vh;
+}
+.chatBlockSec {
+  width: 90%;
+  height: inherit;
+  margin: 0 auto;
+  border: 1px solid;
+}
+.chatBlockSec p {
+  margin: 0;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: rgb(108, 54, 195);
+}
+.chatDetails {
+  display: flex;
+  width: 100%;
+  height: 96%;
+}
+.chatDataBlock {
+  flex-basis: 13%;
+  border-right: 1px solid;
+  text-align: center;
+  height: inherit;
+}
+.chatDataBlock > h1 {
+  padding: 3px;
+}
+.chatDataBlock > h1 > svg {
+  fill: blue;
+  font-size: 30px;
+}
+.chatDataBlock h1 sup {
+  background: rgb(12, 135, 251);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: white;
+  font-size: 14px;
+  margin-left: 5px;
+  text-transform: uppercase;
+}
+.chatDataBlock main {
+  height: auto;
+  width: 100%;
+  padding: 4px;
+}
+.chatDataBlock main h1 {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 16px;
+  padding: 5px 0px;
+}
+
+.chatDataBlock main svg {
+  fill: cornflowerblue;
+  font-size: 35px;
+}
+.chatStudentsList {
+  flex-basis: 27%;
+  border-right: 1px solid;
+  text-align: center;
+  height: inherit;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+.chatStudentsList main {
+  height: 70px;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+}
+.chatStudentsList main svg {
+  font-size: 35px;
+  fill: darkblue;
+}
+.chatStudentsList main input {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin-top: 4px;
+}
+.Studentslist {
+  height: 90px;
+  width: 100%;
+  padding: 3px;
+  display: flex;
+}
+.Studentslist main {
+  background: rgb(210, 208, 208);
+  flex-basis: 20%;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
