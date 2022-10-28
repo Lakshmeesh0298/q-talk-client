@@ -1,14 +1,10 @@
-import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import CustomeRoute from "./CustomeRoute/customeRouter";
-import Loginusers from "./contextapi/loginusers";
 function App() {
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
-        <Loginusers>
-          <CustomeRoute />
-        </Loginusers>
+        <CustomeRoute />
       </BrowserRouter>
     </div>
   );

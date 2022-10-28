@@ -1,7 +1,6 @@
 import { useRoutes } from "react-router-dom";
 import BatchChat from "../components/BatchChat";
 import BatchList from "../components/BatchList";
-import Login from "../components/Login";
 import RegisterBatch from "../components/RegisterBatch";
 
 const CustomeRoute = () => {
@@ -17,10 +16,6 @@ const CustomeRoute = () => {
     {
       path: "/:batchcode",
       element: <BatchChat />,
-    },
-    {
-      path: "/auth/login",
-      element: <Login />,
     },
   ]);
   return route;
