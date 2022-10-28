@@ -5,11 +5,13 @@ const StudentChat = () => {
   useEffect(() => {
     socket.current.emit("adduser", 123);
   }, []);
+  
   useEffect(() => {
     socket?.current.on("welcome", msg => {
       console.log(msg);
     });
   }, [socket]);
+  
   return <div>StudentChat</div>;
 };
 
