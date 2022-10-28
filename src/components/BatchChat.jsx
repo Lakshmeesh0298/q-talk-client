@@ -2,7 +2,7 @@ import React from "react";
 import Styles from "./batchChat.module.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import axiosInstance from "../axios/axiosInstance";
+import { normalAxios } from "../axios/axiosInstance";
 import { useState } from "react";
 import { BsMessenger, BsFillChatSquareTextFill } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
@@ -15,7 +15,7 @@ const BatchChat = () => {
   let [searchStud, setSearchStud] = useState("");
   useEffect(() => {
     async function fetchIndiual() {
-      let { data } = await axiosInstance.get(`/batch/batch_list/${batchcode}`);
+      let { data } = await normalAxios.get(`/batch/batch_list/${batchcode}`);
       setIndiualBatch(data.fetchBatchList);
       console.log(data.fetchBatchList);
     }
@@ -61,9 +61,9 @@ const BatchChat = () => {
                     {res.addstudents
                       .filter(data => {
                         if (
-                          data.Name.toLowerCase().includes(
-                            searchStud.toLocaleLowerCase()
-                          )
+                          data.username
+                            .toLowerCase()
+                            .includes(searchStud.toLocaleLowerCase())
                         ) {
                           return data;
                         }
@@ -76,7 +76,7 @@ const BatchChat = () => {
                                 <FaUserAlt />
                               </main>
                               <aside>
-                                <h4>{x.Name}</h4>
+                                <h4>{x.username}</h4>
                               </aside>
                             </div>
                           </>

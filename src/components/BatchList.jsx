@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import axiosInstance from "../axios/axiosInstance";
+import { normalAxios } from "../axios/axiosInstance";
 import { Link } from "react-router-dom";
 import Styles from "./batchList.module.css";
 import { BsMessenger } from "react-icons/bs";
@@ -12,7 +12,7 @@ const BatchList = () => {
 
   useEffect(() => {
     async function demo() {
-      let fetchData = await axiosInstance.get("/batch/batch_list");
+      let fetchData = await normalAxios.get("/batch/batch_list");
       let finalBatchlistData = fetchData.data;
       setBatchList(finalBatchlistData.fetchBatchList);
     }
@@ -54,8 +54,8 @@ const BatchList = () => {
               <>
                 {filterData
                   .filter(data => {
+                    console.log(data);
                     if (searchBatch == "") {
-                      console.log("emty");
                       return data;
                     } else if (
                       data.batchcode

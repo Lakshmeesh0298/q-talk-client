@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Styles from "./batchRegister.module.css";
-import axiosInstance from "../axios/axiosInstance";
+import { fileAxios } from "../axios/axiosInstance";
 const RegisterBatch = () => {
   let [batchcode, setBatchCode] = useState("");
   let [subject, setSubject] = useState("");
@@ -23,9 +23,7 @@ const RegisterBatch = () => {
       tracker,
       file,
     };
-    console.log(payload);
-
-    let data = await axiosInstance.post("/batch/batch_create", payload);
+    let data = await fileAxios.post("/batch/batch_create", payload);
     console.log(data);
   };
 
